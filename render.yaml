@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: mathsprint-api
+    runtime: node
+    region: singapore
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: JWT_SECRET
+        scope: secret
+      - key: FIREBASE_DATABASE_URL
+        scope: secret
+      - key: FIREBASE_PROJECT_ID
+        scope: secret
+      - key: FIREBASE_CLIENT_EMAIL
+        scope: secret
+      - key: FIREBASE_PRIVATE_KEY
+        scope: secret
+      - key: ALLOWED_ORIGINS
+        value: "https://yourdomain.com,https://www.yourdomain.com"
+      - key: RATE_LIMIT_WINDOW_MS
+        value: 60000
+      - key: RATE_LIMIT_MAX_REQUESTS
+        value: 60
