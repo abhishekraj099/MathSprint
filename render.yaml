@@ -3,6 +3,7 @@ services:
     name: mathsprint-api
     runtime: node
     region: singapore
+    rootDir: .
     plan: free
     buildCommand: npm install
     startCommand: npm start
